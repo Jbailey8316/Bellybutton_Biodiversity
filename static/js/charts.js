@@ -27,7 +27,6 @@ function optionChanged(newSample) {
   // Fetch new data each time a new sample is selected
   buildMetadata(newSample);
   buildCharts(newSample);
-  
 }
 
 // Demographics Panel 
@@ -87,7 +86,9 @@ function buildCharts(sample) {
     }];
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-      title: "Top 10 Bacteria Cultures"
+      title: "Top 10 Bacteria Cultures",
+      xaxis: {title: "Sample Values"},
+      yaxis: {title: "OTU ID"}
     };
 
     // 10. Use Plotly to plot the data with the layout. 
@@ -111,6 +112,7 @@ function buildCharts(sample) {
 var bubbleLayout = {
   title: "Cultures Per Sample",
         xaxis: {title: "OTU ID"},
+        yaxis: {title: "Sample Values"},
         automargin: true,
         hovermode: "closest"
 };
@@ -137,7 +139,7 @@ Plotly.newPlot("bubble", bubbleData, bubbleLayout)
       value: washing_frequency,
       type: "indicator",
       mode: "gauge+number",
-      title: {text: "<b> # of Washes </b> <br></br> Washes Per Week"},
+      title: {text: "<b> Number of Washes </b> <br></br> Washes Per Week"},
       gauge: {
         axis: {range: [null,10], dtick: "2"},
         bar: {color: "black"},
