@@ -93,7 +93,6 @@ function buildCharts(sample) {
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar", barData, barLayout);
 
-
 // Deliverable 2: Bubble Chart
  // 1. Create the trace for the bubble chart.
   var bubbleData = [{
